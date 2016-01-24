@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="jsharu:war">
+    <output-path>$PROJECT_DIR$/jsharu/target</output-path>
+    <root id="archive" name="jsharu.war">
+      <element id="artifact" artifact-name="jsharu:war exploded" />
+    </root>
+  </artifact>
+</component>
