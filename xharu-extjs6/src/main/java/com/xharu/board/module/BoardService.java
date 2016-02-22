@@ -42,7 +42,7 @@ public class BoardService {
 		return postRepository.findByBoard(board);
 	}
 	
-	private Post getPost(long postId) {
+	public Post getPost(long postId) {
 		Post post = postRepository.findOne(postId);
 		if(Objects.isNull(post)) {
 			throw new PostNotFoundException(postId);

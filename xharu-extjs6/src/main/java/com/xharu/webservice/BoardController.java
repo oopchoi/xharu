@@ -57,6 +57,11 @@ public class BoardController {
 	public ResponseEntity<List<Post>> listPosts(@PathVariable String boardname) {
 		return ResponseEntity.ok(boardService.findPosts(boardname));
 	}
+
+	@RequestMapping(value = "/{boardname}/{postId}", method = { RequestMethod.GET, RequestMethod.HEAD })
+	public ResponseEntity<Post> getPost(@PathVariable String boardname, @PathVariable Long postId) {
+		return ResponseEntity.ok(boardService.getPost(postId));
+	}
 	
 	@RequestMapping(value = "/{boardname}", method = { RequestMethod.POST })
 	public ResponseEntity<Post> createPost(@PathVariable String boardname, @Valid PostForm postForm) {
