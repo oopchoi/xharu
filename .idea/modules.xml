@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/jsharu/jsharu.iml" filepath="$PROJECT_DIR$/jsharu/jsharu.iml" />
       <module fileurl="file://$PROJECT_DIR$/xharu.iml" filepath="$PROJECT_DIR$/xharu.iml" />
+      <module fileurl="file://$PROJECT_DIR$/xharu-extjs6/xharu-extjs6.iml" filepath="$PROJECT_DIR$/xharu-extjs6/xharu-extjs6.iml" />
     </modules>
   </component>
 </project>

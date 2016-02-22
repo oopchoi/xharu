@@ -22,11 +22,14 @@
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
         <module name="jsharu" />
+        <module name="xharu-extjs6" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="1.8">
+      <module name="demo" target="1.8" />
       <module name="jsharu" target="1.5" />
       <module name="xharu" target="1.5" />
+      <module name="xharu-extjs6" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
