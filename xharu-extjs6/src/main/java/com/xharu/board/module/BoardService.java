@@ -1,14 +1,13 @@
 package com.xharu.board.module;
 
-import java.util.List;
-import java.util.Objects;
-
-import javax.transaction.Transactional;
-
 import com.xharu.board.Board;
 import com.xharu.board.Post;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import javax.transaction.Transactional;
+import java.util.List;
+import java.util.Objects;
 
 
 
@@ -34,6 +33,10 @@ public class BoardService {
 			throw new BoardNotFoundException(boardName);
 		}
 		return board;
+	}
+
+	public List<Board> findBoards() {
+		return boardRepository.findAll();
 	}
 
 	public List<Post> findPosts(String boardName) {

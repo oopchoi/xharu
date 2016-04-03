@@ -1,13 +1,5 @@
 package com.xharu.webservice;
 
-import java.util.Date;
-import java.util.LinkedHashMap;
-import java.util.List;
-import java.util.Locale;
-import java.util.Map;
-
-import javax.validation.Valid;
-
 import com.xharu.board.Board;
 import com.xharu.board.Post;
 import com.xharu.board.module.BoardService;
@@ -18,14 +10,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.MessageSource;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.ui.Model;
-import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.ExceptionHandler;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.bind.annotation.*;
+
+import javax.validation.Valid;
+import java.util.*;
 
 @RestController
 @RequestMapping("/board")
@@ -47,10 +35,9 @@ public class BoardController {
 		return ResponseEntity.ok(boardService.findBoard(boardname));
 	}
 	
-	@RequestMapping(value = "/{boardname}", method = { RequestMethod.GET, RequestMethod.HEAD })
-	public ResponseEntity<Board> free(@PathVariable String boardname) {
-		System.out.println(boardname);
-		return ResponseEntity.ok(boardService.findBoard(boardname));
+	@RequestMapping(value = "/", method = { RequestMethod.GET, RequestMethod.HEAD })
+	public ResponseEntity<List<Board>> listBoards() {
+		return ResponseEntity.ok(boardService.findBoards());
 	}
 
 	@RequestMapping(value = "/{boardname}/list", method = { RequestMethod.GET, RequestMethod.HEAD })
